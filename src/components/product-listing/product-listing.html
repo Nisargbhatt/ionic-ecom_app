@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-navbar color="ABC"> 
+      <ion-title>Products</ion-title>
+      <ion-buttons end>
+          <button ion-button icon-only (click)="action2()">
+              <ion-icon name="ios-search"></ion-icon>
+          </button>
+          <button ion-button icon-only (click)="action2()">
+              <ion-icon name="ios-heart"></ion-icon>
+          </button>
+          <button ion-button icon-only (click)="action1()">
+              <ion-icon name="ios-cart"></ion-icon>
+          </button>
+  
+          <button ion-button icon-only (click)="action2()">
+              <ion-icon name="ios-contact"></ion-icon>
+          </button>
+      </ion-buttons>
+  
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-card *ngFor='let product of products'>
+    <img [src]="product.image"/>
+    <ion-card-content>
+      <ion-card-title>
+        {{product.name}}
+        </ion-card-title>
+      <p>
+        {{product.description}}
+      </p>
+    </ion-card-content>
+    <ion-row no-padding>
+        <ion-col>
+          <button ion-button clear small color="danger" icon-start>
+            <ion-icon name='heart'></ion-icon>
+            Add Favorite
+          </button>
+        </ion-col>
+        <ion-col text-center>
+          <button ion-button clear small color="danger" icon-start>
+            <ion-icon name='cart'></ion-icon>
+            Add Cart
+          </button>
+        </ion-col>
+        <ion-col text-right>
+          <button ion-button clear small color="danger" icon-start>
+            <ion-icon name='share-alt'></ion-icon>
+            Share
+          </button>
+        </ion-col>
+      </ion-row>
+  
+    
+  </ion-card>
+</ion-content>
